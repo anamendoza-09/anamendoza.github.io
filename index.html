@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ed">
+  <meta name="description" content="Ana Paola Mendoza Diaz — business analytics graduate student with experience in finance, marketing operations, and international business.">
+  <title>Ana Paola Mendoza Diaz | Business Analytics</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --paper: #120508;
+      --secondary: #3D141B;
+      --panel: #1B0B10;
+      --ink: #F3E9E4;
+      --muted: #C9B3AE;
+      --line: rgba(201, 182, 174, 0.18);
+      --green: #7A2436;
+      --green-dark: #5D1C2A;
+      --accent: #FFFFFF;
+      --accent-soft: rgba(255, 255, 255, 0.12);
+      --shadow: rgba(18, 5, 8, 0.48);
+      --white: #F3E9E4;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+      --script: "Segoe Script", "Bradley Hand", "Lucida Handwriting", cursive;
+      --content: 1060px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top right, rgba(122, 36, 54, 0.32), transparent 35%),
+        radial-gradient(circle at bottom left, rgba(122, 36, 54, 0.18), transparent 30%),
+        var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .wrap { width: min(var(--content), calc(100% - 48px)); margin-inline: auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: rgba(18, 5, 8, 0.9);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+    .nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -.03em;
+      text-decoration: none;
+      white-space: nowrap;
+      color: var(--ink);
+    }
+    .nav-links { display: flex; align-items: center; gap: 27px; }
+    .nav-links a {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color .2s ease;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links .contact-link {
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-radius: 999px;
+      color: var(--accent);
+      padding: 8px 15px;
+    }
+
+    .hero {
+      padding: 88px 0 80px;
+      background: radial-gradient(circle at top right, rgba(122, 36, 54, 0.26), transparent 36%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+      align-items: center;
+      gap: 52px;
+    }
+    .eyebrow, .section-kicker {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .section-kicker {
+      display: inline-block;
+      margin-bottom: 0;
+      font-size: 10px;
+      letter-spacing: .18em;
+    }
+    .hero-title {
+      margin: 20px 0 18px;
+      font-family: var(--serif);
+      font-size: clamp(38px, 5vw, 74px);
+      font-weight: 400;
+      letter-spacing: -.06em;
+      line-height: .96;
+      color: var(--ink);
+    }
+    .hero-title .lead-serif {
+      display: block;
+    }
+    .hero-title .lead-script {
+      display: block;
+      font-family: var(--script);
+      font-size: 0.9em;
+      font-weight: 400;
+      letter-spacing: -.02em;
+      color: var(--accent);
+      transform: rotate(-3deg);
+      margin-top: 6px;
+    }
+    .hero-name {
+      margin: 0;
+      color: var(--ink);
+      font-size: 1.05rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .hero-tagline {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: .9rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .button {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      padding: 10px 18px;
+      color: var(--ink);
+      background: rgba(122, 36, 54, 0.35);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .2s ease, transform .2s ease, border-color .2s ease;
+    }
+    .button:hover { background: rgba(122, 36, 54, 0.7); border-color: rgba(255, 255, 255, 0.75); transform: translateY(-1px); }
+    .button.secondary { color: var(--accent); background: transparent; }
+    .button.secondary:hover { background: rgba(255, 255, 255, 0.08); }
+    .button svg { width: 15px; height: 15px; }
+
+    .hero-graphic {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 340px;
+      background: radial-gradient(circle at center, rgba(122, 36, 54, 0.18), transparent 58%);
+      border-radius: 28px;
+    }
+    .code-editor {
+      width: min(100%, 440px);
+      background: rgba(11, 6, 9, 0.86);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 24px 52px rgba(18, 5, 8, 0.42);
+    }
+    .code-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .traffic-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.7);
+      opacity: 0.7;
+    }
+    .traffic-dot:nth-child(1) { background: rgba(255, 255, 255, 0.7); }
+    .traffic-dot:nth-child(2) { background: rgba(255, 255, 255, 0.5); }
+    .traffic-dot:nth-child(3) { background: rgba(255, 255, 255, 0.3); }
+    .code-body {
+      padding: 18px 18px 20px;
+      min-height: 250px;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 14px;
+      line-height: 1.85;
+      color: rgba(243, 233, 228, 0.9);
+      white-space: pre-wrap;
+    }
+    .code-body .key { color: #f3e9e4; }
+    .code-body .string { color: #f7d8c5; }
+    .code-body .number { color: #f3e9e4; }
+    .code-body .operator { color: rgba(255, 255, 255, 0.7); }
+    .code-typed {
+      display: inline-block;
+      min-height: 1.6em;
+      border-right: 2px solid rgba(255, 255, 255, 0.8);
+      animation: blink-caret 1s steps(1) infinite;
+    }
+    @keyframes blink-caret {
+      50% { border-color: transparent; }
+    }
+
+    .portrait-card {
+      display: grid;
+      gap: 18px;
+      justify-items: center;
+      align-content: center;
+      padding: 8px 0;
+    }
+    .portrait-frame {
+      position: relative;
+      width: min(100%, 300px);
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(122, 36, 54, 0.25), rgba(255, 255, 255, 0.12));
+      box-shadow: 0 28px 60px var(--shadow);
+    }
+    .portrait-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .portrait-meta {
+      width: min(100%, 300px);
+      text-align: center;
+    }
+    .portrait-meta .portrait-name {
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .portrait-meta div:last-child {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    main section, .contact, .hero { padding: 78px 0; }
+    .section-heading {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      align-items: start;
+      gap: 35px;
+      margin-bottom: 38px;
+    }
+    .section-heading h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(38px, 4.2vw, 52px);
+      font-weight: 400;
+      letter-spacing: -.045em;
+      line-height: 1.05;
+      color: var(--ink);
+    }
+    .section-heading p { max-width: 560px; margin: 8px 0 0; color: var(--muted); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr);
+      gap: 32px;
+      align-items: center;
+    }
+    .about-grid p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.8; }
+
+    .education-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .education-card {
+      min-height: 265px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 25px 27px;
+      background: rgba(61, 20, 27, 0.5);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    }
+    .education-card .school-type {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .education-card h3 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 1.25;
+      color: var(--ink);
+    }
+    .education-card .degree { margin: 8px 0 17px; color: var(--ink); font-size: 14px; }
+    .education-card .meta { margin: 0; color: var(--muted); font-size: 12px; }
+    .education-card .meta + .meta { margin-top: 7px; }
+    .education-card .meta strong { color: var(--ink); }
+
+    .experience { background: rgba(61, 20, 27, 0.52); }
+    .timeline { border-top: 1px solid var(--line); }
+    .job {
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr);
+      gap: 35px;
+      border-bottom: 1px solid var(--line);
+      padding: 27px 0 30px;
+    }
+    .job-meta { color: var(--muted); font-size: 12px; }
+    .job-meta .period { color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+    .job-meta p { margin: 5px 0 0; }
+    .job h3 { margin: 0; font-family: var(--serif); font-size: 22px; font-weight: 400; line-height: 1.3; color: var(--ink); }
+    .job ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 13px; }
+    .job li { padding-left: 3px; }
+    .job li + li { margin-top: 6px; }
+    .job li::marker { color: var(--accent); }
+
+    .leadership-list { display: grid; gap: 0; border-top: 1px solid var(--line); }
+    .leadership-item {
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr);
+      gap: 35px;
+      border-bottom: 1px solid var(--line);
+      padding: 24px 0;
+    }
+    .leadership-item .period { color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+    .leadership-item h3 { margin: 0; font-family: var(--serif); font-size: 20px; font-weight: 400; color: var(--ink); }
+    .leadership-item ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 13px; }
+    .leadership-item li { padding-left: 3px; }
+    .leadership-item li + li { margin-top: 6px; }
+    .leadership-item li::marker { color: var(--accent); }
+
+    .skills { padding-top: 67px; background: linear-gradient(180deg, rgba(61, 20, 27, 0.8), rgba(18, 5, 8, 1)); color: var(--ink); }
+    .skills .section-kicker { color: var(--accent); }
+    .skills .section-heading h2 { color: var(--ink); }
+    .skills .section-heading p { color: var(--muted); }
+    .skill-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255, 255, 255, 0.08); }
+    .skill-group { min-height: 150px; padding: 22px; background: rgba(61, 20, 27, 0.52); }
+    .skill-group h3 { margin: 0 0 13px; color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .skill-group p { margin: 0; color: var(--ink); font-size: 14px; line-height: 1.9; }
+
+    .contact {
+      padding: 74px 0 80px;
+      background: radial-gradient(circle at top, rgba(122, 36, 54, 0.22), transparent 40%);
+    }
+    .contact-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 35px;
+    }
+    .contact h2 { margin: 0; font-family: var(--serif); font-size: clamp(34px, 5vw, 48px); font-weight: 400; letter-spacing: -.04em; }
+    .contact p { margin: 7px 0 0; color: var(--muted); }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    footer { padding: 18px 0 26px; color: var(--muted); font-size: 11px; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 20px; }
+
+    .reveal-section {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 750ms ease, transform 750ms ease;
+    }
+    .reveal-section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes draw-line { to { stroke-dashoffset: 0; } }
+    @keyframes pulse-node {
+      0%, 100% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.18); opacity: 1; }
+    }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 36px, var(--content)); }
+      .nav { min-height: 62px; }
+      .brand { font-size: 16px; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 10px; }
+      .nav-links a:nth-child(2) { display: none; }
+      .nav-links .contact-link { padding: 7px 12px; }
+      .hero { padding: 61px 0 52px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 26px; }
+      .hero-graphic { min-height: 260px; }
+      .intro-inner { align-items: flex-start; flex-direction: column; gap: 7px; padding: 15px 0; }
+      main section, .contact, .intro-strip { padding: 61px 0; }
+      .section-heading { grid-template-columns: 1fr; gap: 12px; margin-bottom: 27px; }
+      .section-heading h2 { margin: 0; }
+      .section-heading p { margin-top: 0; }
+      .about-grid { grid-template-columns: 1fr; }
+      .job, .leadership-item { grid-template-columns: 135px minmax(0, 1fr); gap: 20px; }
+      .skill-grid { grid-template-columns: repeat(2, 1fr); }
+      .skill-group { min-height: 135px; }
+    }
+    @media (max-width: 520px) {
+      .wrap { width: min(100% - 32px, var(--content)); }
+      .nav-links { gap: 10px; }
+      .nav-links a { letter-spacing: .035em; }
+      .nav-links a:nth-child(3) { display: none; }
+      .hero { padding-top: 50px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 20px; }
+      .hero-title { font-size: clamp(32px, 11vw, 52px); }
+      .hero-name { letter-spacing: .08em; }
+      .hero-tagline { font-size: 0.77rem; letter-spacing: .06em; }
+      .education-grid { grid-template-columns: 1fr; }
+      .education-card { min-height: auto; padding: 22px; }
+      .job, .leadership-item { grid-template-columns: 1fr; gap: 9px; }
+      .job-meta p { display: inline; }
+      .job-meta p + p::before { content: " · "; }
+      .job h3 { font-size: 21px; }
+      .leadership-item { gap: 5px; }
+      .skill-grid { grid-template-columns: 1fr; }
+      .skill-group { min-height: auto; padding: 19px 20px; }
+      .contact-box { align-items: flex-start; flex-direction: column; }
+      footer .wrap { flex-direction: column; gap: 2px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal-section {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#home">Ana Paola Mendoza Diaz</a>
+      <div class="nav-links">
+        <a href="#about">About Me</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a class="contact-link" href="#contact">Get in touch</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero wrap reveal-section" id="home" aria-labelledby="intro-title">
+      <div class="hero-grid">
+        <div>
+          <h1 class="hero-title" id="intro-title"><span class="lead-serif">Welcome to my&nbsp;</span><span class="lead-script">portfolio</span></h1>
+          <p class="hero-name">Ana Paola Mendoza Diaz</p>
+          <p class="hero-tagline">Business Analytics · International Business</p>
+          <div class="hero-actions">
+            <a class="button" href="mailto:anapmd2004@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6.5h16v11H4zM4.5 7l7.5 6 7.5-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Email me
+            </a>
+            <a class="button secondary" href="https://www.linkedin.com/in/paola-mendoza-diaz/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="hero-graphic" aria-label="Animated code snippet about Ana Paola's background and skills">
+          <div class="code-editor" aria-live="polite">
+            <div class="code-header" aria-hidden="true">
+              <span class="traffic-dot"></span>
+              <span class="traffic-dot"></span>
+              <span class="traffic-dot"></span>
+            </div>
+            <div class="code-body">
+              <span class="code-typed" id="typed-output"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="wrap reveal-section" id="about" aria-labelledby="about-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="about-title">About Me</h2>
+        </div>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p>I’m a Business Analytics master’s candidate at Babson College with an undergraduate degree in International Business from Trinity University. I’m a global citizen — I’ve lived in Venezuela, Ecuador, Austria, and the USA — and that cross-cultural adaptability shapes how I work. My background blends data analytics with international business, marketing, and finance experience. I enjoy turning complex information into clear, actionable insights that support thoughtful decisions.</p>
+        </div>
+        <aside class="portrait-card" aria-label="Portrait of Ana Paola Mendoza Diaz">
+          <div class="portrait-frame" aria-label="Headshot of Ana Paola Mendoza Diaz">
+            <img src="headshot.jpg" alt="Headshot of Ana Paola Mendoza Diaz">
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="wrap reveal-section" id="education" aria-labelledby="education-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="education-title">Education</h2>
+        </div>
+      </div>
+      <div class="education-grid">
+        <article class="education-card">
+          <p class="school-type">Babson College, F.W. Olin Graduate School of Business — Wellesley, MA</p>
+          <h3>M.S. in Business Analytics Candidate — Expected Dec 2027</h3>
+          <p class="degree">Notable coursework: Programming for Business Analytics, Machine Learning for Business, Storytelling with Data</p>
+          <p class="meta">Awards: Global Value Award, Babson MSBA Scholarship</p>
+        </article>
+        <article class="education-card">
+          <p class="school-type">Trinity University, Michael Neidorff School of Business — San Antonio, TX</p>
+          <h3>B.S. in International Business, Minor in Finance — May 2026</h3>
+          <p class="degree">Awards: International Student Scholarship, Dean's List Fall 2024, Cum Laude Honors</p>
+          <p class="meta">Study Abroad: IES Abroad, Vienna, Austria (one semester)</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="experience reveal-section" id="experience" aria-labelledby="experience-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <h2 id="experience-title">Experience</h2>
+          </div>
+        </div>
+        <div class="timeline">
+          <article class="job">
+            <div class="job-meta"><div class="period">June–Aug 2024</div><p>Quito, Ecuador</p></div>
+            <div>
+              <h3>Business Analyst Intern, Finance Department — JCS Supply LTDA</h3>
+              <ul>
+                <li>Reconciled multi-month Cost of Sales vs. Sales reports exported from the company ERP (Contífico) in Excel, building SUMIF-linked summary and detail schedules that documented reconciling items in a formal note for management review</li>
+                <li>Cleaned and standardized raw data exports in Excel to enable accurate matching, sorting, and reporting for an industrial and oilfield equipment distributor</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="job-meta"><div class="period">Jun–Aug 2025</div><p>San Antonio, TX</p></div>
+            <div>
+              <h3>Marketing Operations Intern, Development Department — Kairoi Residential</h3>
+              <ul>
+                <li>Delivered an AI implementation proposal (Scribe AI) to automate standard operating procedures, reducing documentation time by ~60%</li>
+                <li>Compiled and analyzed operating budgets, vendor spending, and cost bridge reports in Excel to support financial forecasting, spend analysis, and budget reconciliation</li>
+                <li>Designed reporting documentation and performance dashboards (META Business Suite), standardizing campaign tracking and improving data consistency across 100+ properties</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="job-meta"><div class="period">Feb–May 2025</div><p>Vienna, Austria</p></div>
+            <div>
+              <h3>Marketing Intern, Student Development Department — Diplomatic Academy</h3>
+              <ul>
+                <li>Redesigned flyer and program materials for a 200-student diplomatic studies program, strengthening brand consistency and prospective student engagement</li>
+                <li>Collaborated on and launched a video campaign introducing the new Master of Digital International Affairs program at the world's oldest diplomatic institution</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="job-meta"><div class="period">Jun–Aug 2024</div><p>San Antonio, TX</p></div>
+            <div>
+              <h3>Marketing Operations Intern, Development Department — Kairoi Residential</h3>
+              <ul>
+                <li>Developed operating budgets for 80+ properties, optimizing financial planning and resource allocation</li>
+                <li>Created a 32-page operations handbook standardizing team procedures, systems, and software workflows, reducing new-hire onboarding time by ~20%</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="job-meta"><div class="period">May–Aug 2023</div><p>Quito, Ecuador</p></div>
+            <div>
+              <h3>Global Sales Intern, Sales Department — JCS Supply LTDA</h3>
+              <ul>
+                <li>Assisted in inventory management of 500+ valves and pipes, calculating optimal reorder points to balance availability and carrying cost</li>
+                <li>Coordinated purchase orders and vendor quote assessments across finance and procurement teams, improving order accuracy by ~10%</li>
+                <li>Audited 50+ expense reports, cutting discrepancies by 15% and accelerating month-end reporting</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div style="padding-top:30px; border-top:1px solid #d5d5ca; margin-top:18px;">
+          <h3 style="margin:0 0 18px; font-family:Georgia, 'Times New Roman', serif; font-size:28px; font-weight:400; letter-spacing:-.03em; color:#244638;">Leadership</h3>
+          <div class="leadership-list">
+            <article class="leadership-item">
+              <div class="period">Jan–May 2026</div>
+              <div>
+                <h3>Neidorff Strategic Planning Student Board Member — Michael Neidorff School of Business</h3>
+                <ul>
+                  <li>Partnered with the Dean of the Neidorff School of Business to advance strategic initiatives that enhanced student engagement, academic experience, and professional development</li>
+                  <li>Evaluated the "Business Buddy" program and proposed its expansion across the School of Business to strengthen peer mentorship and student success</li>
+                </ul>
+              </div>
+            </article>
+            <article class="leadership-item">
+              <div class="period">Jan–May 2026</div>
+              <div>
+                <h3>International Business Ambassador</h3>
+                <ul>
+                  <li>Shared first-hand academic and global perspectives with prospective International Business students and their parents at recruitment and networking events</li>
+                  <li>Led an initiative to design a peer mentorship (Buddy) program for International Business students, pairing seniors with sophomores and juniors on academic pathways</li>
+                </ul>
+              </div>
+            </article>
+            <article class="leadership-item">
+              <div class="period">Aug 2025–May 2026</div>
+              <div>
+                <h3>Consultant &amp; Secretary, Latino Empower — Trinity University Consulting Club</h3>
+                <ul>
+                  <li>Analyzed donor and revenue data to assess performance trends and evaluate new fundraising channels, including corporate sponsorships and peer-to-peer initiatives</li>
+                  <li>Designed a fundraising strategy and engagement toolkit with process templates, communication drafts, and platform recommendations</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills reveal-section" id="skills" aria-labelledby="skills-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <h2 id="skills-title">Skills</h2>
+          </div>
+        </div>
+        <div class="skill-grid">
+          <div class="skill-group">
+            <h3>Software</h3>
+            <p>Microsoft Office (Proficient), Tableau (Proficient), Power BI (Proficient), R &amp; RStudio (Intermediate), Python (Intermediate), Adobe (Basic)</p>
+          </div>
+          <div class="skill-group">
+            <h3>Languages</h3>
+            <p>English (Proficient), Spanish (Native), German (Basic)</p>
+          </div>
+          <div class="skill-group">
+            <h3>Certifications</h3>
+            <p>Intro to R (DataCamp), Microsoft Excel 2019 Expert, The Complete Tableau Bootcamp for Data Visualization (Udemy), Python for Data Analysis and Visualization (Udemy)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="contact wrap reveal-section" id="contact" aria-labelledby="contact-title">
+      <div class="contact-box">
+        <div>
+          <p class="section-kicker">Let’s connect</p>
+          <h2 id="contact-title">Have a good project in mind?</h2>
+          <p>I’d love to hear from you.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="button" href="mailto:anapmd2004@gmail.com">anapmd2004@gmail.com</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/paola-mendoza-diaz/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="reveal-section">
+    <div class="wrap">
+      <span>© 2026 Ana Paola Mendoza Diaz</span>
+      <span>Built with curiosity and a global perspective.</span>
+    </div>
+  </footer>
+
+  <script>
+    const revealItems = document.querySelectorAll('.reveal-section');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealItems.forEach((item) => observer.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add('is-visible'));
+    }
+
+    const typedOutput = document.getElementById('typed-output');
+    const snippet = `ana = {\n  "role": "M.S. Business Analytics Candidate",\n  "background": "International Business",\n  "origins": ["Venezuela", "Ecuador", "USA"],\n  "tools": ["Tableau", "Power BI", "Python", "R"]\n}`;
+
+    function typeSnippet() {
+      let index = 0;
+      typedOutput.textContent = '';
+
+      function tick() {
+        typedOutput.textContent += snippet[index];
+        index += 1;
+
+        if (index < snippet.length) {
+          setTimeout(tick, 35);
+        } else {
+          setTimeout(() => {
+            typedOutput.textContent = '';
+            index = 0;
+            setTimeout(tick, 700);
+          }, 1400);
+        }
+      }
+
+      tick();
+    }
+
+    if (typedOutput) {
+      typeSnippet();
+    }
+  </script>
+</body>
+</html>
